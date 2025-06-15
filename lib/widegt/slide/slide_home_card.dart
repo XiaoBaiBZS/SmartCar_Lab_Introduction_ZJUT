@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smart_car_lab/class/srt_parser.dart';
 import 'package:smart_car_lab/class/subtitle.dart';
+import 'package:smart_car_lab/route/route_utils.dart';
+import 'package:smart_car_lab/route/routes.dart';
 import 'package:smart_car_lab/widegt/tv_focus_widget.dart';
 
 /**
@@ -32,30 +34,8 @@ class _SlideHomeCardState extends State<SlideHomeCard> {
     return TVFocusWidget(
       onFocus: () => print('获得焦点'),
       onBlur: () => print('失去焦点'),
-      onSelect: () async {
-
-        Future<String> loadAsset(String path) async {
-          return await rootBundle.loadString(path);
-        }
-
-        // 加载并解析SRT文件
-        Future<List<Subtitle>> loadSubtitlesFromAssets() async {
-          try {
-            final srtContent = await loadAsset('assets/resource/default_slide/1.en.srt');
-            return SrtParser.parse(srtContent);
-          } catch (e) {
-            print('加载或解析字幕时出错: $e');
-            return [];
-          }
-        }
-
-        // 假设在应用文档目录下有一个名为 subtitles.srt 的文件
-        final subtitles = await loadSubtitlesFromAssets();
-
-        // 打印解析结果
-        for (final subtitle in subtitles) {
-          print(subtitle);
-        }
+      onSelect: (){
+        RouteUtils.pushForNamed(context, RoutePath.baseSlideContent);
       },
       focusColor: widget.isSelected ?  Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.tertiary,
       child: Container(
@@ -76,6 +56,6 @@ class _SlideHomeCardState extends State<SlideHomeCard> {
           ),
         ),
       ),
-    );;
+    );
   }
 }

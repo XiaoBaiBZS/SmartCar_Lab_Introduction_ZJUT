@@ -1,0 +1,19 @@
+{
+  "title":"title",
+  "discription":"disccription",
+  "author":"author",
+  "data":[
+    {
+      "id":0,
+      "title":"欢迎",
+      "type":"image",
+      "media":"0.jpg"
+    },
+    {
+      "id":1,
+      "title":"观看介绍短片",
+      "type":"video",
+      "media":""
+    }
+  ]
+}

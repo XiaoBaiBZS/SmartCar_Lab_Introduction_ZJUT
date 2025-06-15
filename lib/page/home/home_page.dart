@@ -52,6 +52,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('Smart Car Lab Introduction'),
         bottom: TabBar(
           controller: _tabController,

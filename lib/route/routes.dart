@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_car_lab/page/home/home_page.dart';
+import 'package:smart_car_lab/page/slide/slide_content/base_slide_content.dart';
 
 
 class Routes {
@@ -8,6 +9,8 @@ class Routes {
     switch (settings.name) {
       case RoutePath.home:
         return pageRoute(const HomePage(), settings: settings);
+      case RoutePath.baseSlideContent:
+        return pageRoute(const BaseSlideContent(), settings: settings);
     }
     return pageRoute(Scaffold(
       body: SafeArea(
@@ -35,6 +38,7 @@ class Routes {
 
 class RoutePath {
   //HomePage
-  static const String home = "/";
+  static const String home = "/home";
+  static const String baseSlideContent = "/slide/slide_content";
 
 }
