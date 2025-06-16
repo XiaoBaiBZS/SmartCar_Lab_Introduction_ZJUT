@@ -18,6 +18,10 @@
 - Zhanshuo.Bai@outlook.com
 - 1298589907@qq.com
 
+## 继续开发
+
+本项目由flutter框架构建
+
 # Smart Car Lab of ZJUT Introduction Television App
 
 It is used for visiting the intelligent car laboratory of Zhejiang University of Technology to explain to the outside world.
