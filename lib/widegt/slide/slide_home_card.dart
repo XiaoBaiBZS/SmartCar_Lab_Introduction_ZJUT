@@ -32,7 +32,9 @@ class _SlideHomeCardState extends State<SlideHomeCard> {
   @override
   Widget build(BuildContext context) {
     return TVFocusWidget(
-      onFocus: () => print('获得焦点'),
+      onFocus: (){
+        // RouteUtils.pushForNamed(context, RoutePath.baseSlideContent);
+      },
       onBlur: () => print('失去焦点'),
       onSelect: (){
         RouteUtils.pushForNamed(context, RoutePath.baseSlideContent);

@@ -61,6 +61,7 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
   Timer? playbackTimer; // 新增计时器控制
   // late VideoPlayerController _videoPlayerController;
   // 示例字幕数据
+  bool needDisposeVideoController = false;
   String subtitleContentMain = """
 1
 00:00:00,000 --> 00:00:03,000
@@ -127,6 +128,7 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
   Future<void> _updateSlideData() async {
 
 
+
     setState(() {
       slideConfig;
       currentSlideData = slideConfig.data![currentPage];
@@ -138,6 +140,11 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
     });
 
     if(currentSlideData.type == "video"){
+      if(needDisposeVideoController){
+        _videoSubController.dispose();
+        needDisposeVideoController = false;
+
+      }
 
       subtitleContentMain = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.cn.srt');
       subtitleContentSecond = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.en.srt');
@@ -153,9 +160,12 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
 
       );
       // 初始化视频控制器 (这里使用网络视频示例)
-      _videoSubController = VideoPlayerController.asset(currentSlideData.media  ??"")..initialize().then((_) {
+      _videoSubController = VideoPlayerController.asset(currentSlideData.media ??"")..initialize().then((_) {
         setState(() {});
       });
+      needDisposeVideoController = true;
+
+
     }else if(currentSlideData.type == "image"){
       subtitleContentMain = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.cn.txt');
       subtitleContentSecond = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.en.txt');
@@ -190,6 +200,7 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
       height: 600,
       child: VideoPlayerComponent(
         videoController: videoSubController,
+
       ),
     );
 
