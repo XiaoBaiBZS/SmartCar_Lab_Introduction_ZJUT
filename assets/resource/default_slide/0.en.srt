@@ -1,3 +1,0 @@
-1
-00:00:00,000 --> 00:00:00,000
-Welcome to the Intelligent Vehicle Laboratory of Zhejiang University of Technology!

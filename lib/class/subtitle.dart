@@ -31,3 +31,4 @@ class Subtitle {
     return '${twoDigits(duration.inHours)}:$twoDigitMinutes:$twoDigitSeconds,$threeDigitMillis';
   }
 }
+

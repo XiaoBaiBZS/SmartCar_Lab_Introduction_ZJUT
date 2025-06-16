@@ -7,13 +7,55 @@
       "id":0,
       "title":"欢迎",
       "type":"image",
-      "media":"0.jpg"
+      "media":"assets/resource/default_slide/0.jpg"
     },
     {
       "id":1,
       "title":"观看介绍短片",
       "type":"video",
-      "media":""
+      "media":"assets/resource/default_slide/1.mp4"
+    },
+    {
+      "id":2,
+      "title":"电磁组车模",
+      "type":"image",
+      "media":"assets/resource/default_slide/2.png"
+    },
+    {
+      "id":3,
+      "title":"电磁组场地",
+      "type":"image",
+      "media":"assets/resource/default_slide/3.png"
+    },
+    {
+      "id":4,
+      "title":"BOOM9",
+      "type":"image",
+      "media":"assets/resource/default_slide/4.png"
+    },
+    {
+      "id":5,
+      "title":"BOOM8",
+      "type":"image",
+      "media":"assets/resource/default_slide/5.png"
+    },
+    {
+      "id":6,
+      "title":"独轮",
+      "type":"video",
+      "media":"assets/resource/default_slide/6.mp4"
+    },
+    {
+      "id":7,
+      "title":"上手体验与答疑解惑",
+      "type":"image",
+      "media":"assets/resource/default_slide/7.png"
+    },
+    {
+      "id":8,
+      "title":"结束",
+      "type":"image",
+      "media":"assets/resource/default_slide/7.png"
     }
   ]
 }

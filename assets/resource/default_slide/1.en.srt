@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:09,729
+This film shows various car models from past competitions.
+
+2
+00:00:09,729 --> 00:00:15,944
+This is the traditional four-wheel camera group.
+
+3
+00:00:15,944 --> 00:00:24,944
+It identifies tracks visually - fastest wins.
+
+4
+00:00:24,944 --> 00:00:32,000
+Balance bike group has just two wheels.
+
+5
+00:00:32,000 --> 00:00:39,757
+It requires self-balancing like a bicycle.
+
+6
+00:00:39,757 --> 00:00:44,307
+Wireless group charges capacitors remotely.
+
+7
+00:00:44,307 --> 00:00:52,307
+Competitors race to charge fastest and run longest.
+
+8
+00:00:52,307 --> 00:00:57,476
+Beacon group: cars find and deactivate signals.
+
+9
+00:00:57,476 --> 00:01:02,476
+They "extinguish" random light/sound beacons.
+
+10
+00:01:02,476 --> 00:01:08,000
+Smart vision cars recognize ground patterns.
+
+11
+00:01:08,000 --> 00:01:14,828
+They classify and grab items using AI.
+
+12
+00:01:14,828 --> 00:01:20,794
+Off-road group reaches 70km/h speeds.
+
+13
+00:01:20,794 --> 00:01:27,794
+(Footage captured by drone)
+
+14
+00:01:27,794 --> 00:01:32,467
+Next: more "intelligent" groups.
+
+15
+00:01:32,467 --> 00:01:35,467
+They use powerful processors.
+
+16
+00:01:35,467 --> 00:01:38,467
+They simulate real-world tasks.
+
+17
+00:01:38,467 --> 00:01:41,467
+Like logistics and indoor navigation.
+
+18
+00:01:41,467 --> 00:01:44,467
+Some feature AI capabilities.
+
+19
+00:01:52,173 --> 00:01:56,952
+This robot has multiple sensors.
+
+20
+00:01:56,958 --> 00:02:01,000
+It maps surroundings and avoids obstacles.
+
+21
+00:02:01,000 --> 00:02:04,306
+Then calculates optimal paths.
+
+22
+00:02:04,306 --> 00:02:07,306
+Now: highlights from national finals.
+
+23
+00:02:07,306 --> 00:02:10,306
+ZJUT team wins national awards yearly.
+
+24
+00:02:10,306 --> 00:02:13,306
+Ranking top among hundreds of teams.
+
+25
+00:02:13,306 --> 00:02:16,306
+Thanks for watching!

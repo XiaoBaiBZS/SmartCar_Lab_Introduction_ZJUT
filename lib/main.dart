@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '电视端焦点示例',
+      title: 'Smart Car Lab Introduction',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light,colorSchemeSeed: Colors.cyan),
       darkTheme: ThemeData(brightness: Brightness.dark,colorSchemeSeed: Colors.cyan),
