@@ -1,0 +1,1 @@
+Chiếc xe này là xe 3 bánh. Khác với xe 4 bánh dùng servo lái, bánh trước là bánh tự do chỉ dẫn hướng. Bạn có biết nó rẽ thế nào không? Nó dùng chênh lệch tốc độ 2 bánh sau để rẽ: khi bánh trái tiến/bánh phải lùi thì xe rẽ phải. Cách rẽ này linh hoạt hơn nhưng khó giữ ổn định, đòi hỏi thuật toán và điều chỉnh thông số rất tinh vi.

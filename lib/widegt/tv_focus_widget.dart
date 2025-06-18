@@ -27,7 +27,7 @@ class TVFocusWidget extends StatefulWidget {
   State<TVFocusWidget> createState() => _TVFocusWidgetState();
 }
 
-class _TVFocusWidgetState extends State<TVFocusWidget>  {
+class _TVFocusWidgetState extends State<TVFocusWidget> {
   late FocusNode _focusNode;
   bool _hasFocus = false;
   double _currentScale = 1.0;
@@ -76,21 +76,28 @@ class _TVFocusWidgetState extends State<TVFocusWidget>  {
       },
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOut,
-          transform: Matrix4.identity()..scale(_currentScale),
-          transformAlignment: Alignment.center,
-          decoration: BoxDecoration(
-            border: _hasFocus
-                ? Border.all(
-              color: widget.focusColor,
-              width: widget.focusBorderWidth,
-            )
-                : null,
-            borderRadius: BorderRadius.circular(10.0),
+        child: GestureDetector(
+          onTap: () {
+            // 点击时请求焦点并触发选择事件
+            _focusNode.requestFocus();
+            widget.onSelect?.call();
+          },
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeOut,
+            transform: Matrix4.identity()..scale(_currentScale),
+            transformAlignment: Alignment.center,
+            decoration: BoxDecoration(
+              border: _hasFocus
+                  ? Border.all(
+                color: widget.focusColor,
+                width: widget.focusBorderWidth,
+              )
+                  : null,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: widget.child,
           ),
-          child: widget.child,
         ),
       ),
     );

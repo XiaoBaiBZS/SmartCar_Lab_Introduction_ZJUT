@@ -3,7 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:marquee/marquee.dart';
+import 'package:smart_car_lab/class/setting.dart';
 import 'package:smart_car_lab/class/slide_config.dart';
 
 import 'package:smart_car_lab/widegt/marquee_text.dart';
@@ -100,6 +102,19 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
 最后一句字幕，之后会重新开始。
 """;
 
+  Map<String , String> subtitleMap = {
+    'cn 简体中文':"cn",
+    'en 英语':"en",
+    'vi 越南语':"vi",
+    'kr 韩语':"kr",
+    'ru 俄语':"ru",
+    'ja 日本语':"ja",
+    'fr 法语':"fr"
+  };
+
+  String firstSrt = "";
+  String secondSrt = "";
+
 
   @override
   void initState() {
@@ -109,6 +124,14 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       // _updateMediaWidth();
       slideConfig =  SlideConfig.fromJson(jsonDecode(await rootBundle.loadString('assets/resource/default_slide/config.json')));
+
+      setState(() {
+        firstSrt = subtitleMap[Settings.getValue<String>(Setting.mainSrt,)??"cn"]!;
+        secondSrt = subtitleMap[Settings.getValue<String>(Setting.secondSrt,)??"en"]!;
+
+        print(firstSrt);
+        print(secondSrt);
+      });
       _updateSlideData();
 
     });
@@ -146,8 +169,8 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
 
       }
 
-      subtitleContentMain = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.cn.srt');
-      subtitleContentSecond = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.en.srt');
+      subtitleContentMain = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.${firstSrt}.srt');
+      subtitleContentSecond = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.${secondSrt}.srt');
       // 初始化字幕控制器
       _subtitleControllerMain = SubtitleController(
         subtitleType: SubtitleType.srt,
@@ -167,8 +190,8 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
 
 
     }else if(currentSlideData.type == "image"){
-      subtitleContentMain = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.cn.txt');
-      subtitleContentSecond = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.en.txt');
+      subtitleContentMain = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.${firstSrt}.txt');
+      subtitleContentSecond = await rootBundle.loadString('assets/resource/default_slide/${currentSlideData.id}.${secondSrt}.txt');
       setState(() {
         subtitleContentMain;
         subtitleContentSecond;

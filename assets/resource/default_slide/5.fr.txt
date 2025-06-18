@@ -1,0 +1,1 @@
+Ce véhicule à 3 roues diffère des 4 roues : sa roue avant pivotante ne dirige pas activement. Le virage s'effectue par différentiel des roues arrière (gauche avant/droite arrière = virage droit). Ce système plus agile mais moins stable exige des algorithmes et réglages très précis.

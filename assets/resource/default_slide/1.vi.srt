@@ -1,99 +1,90 @@
-1
 00:00:00,000 --> 00:00:09,729
-Phim này giới thiệu các mẫu xe từ các cuộc thi trước.
+Các mẫu xe thi đấu qua các năm
 
 2
 00:00:09,729 --> 00:00:15,944
-Đây là nhóm xe bốn bánh camera truyền thống.
+Nhóm 4 bánh camera truyền thống
 
 3
 00:00:15,944 --> 00:00:24,944
-Nhận diện đường đua bằng camera - xe nhanh nhất thắng.
+Nhận diện đường đua, xe nhanh hơn thắng
 
 4
-00:00:24,944 --> 00:00:32,000
-Nhóm xe cân bằng chỉ có hai bánh.
+00:00:24,944 --> 00:00:39,757
+Nhóm 2 bánh tự cân bằng như xe đạp
 
 5
-00:00:32,000 --> 00:00:39,757
-Yêu cầu tự cân bằng như xe đạp.
+00:00:39,757 --> 00:00:44,307
+Nhóm sạc không dây không dùng pin
 
 6
-00:00:39,757 --> 00:00:44,307
-Nhóm sạc không dây nạp điện từ xa.
+00:00:44,307 --> 00:00:52,307
+Thi tốc độ sạc và tiết kiệm năng lượng
 
 7
-00:00:44,307 --> 00:00:52,307
-Thi đua sạc nhanh và chạy lâu nhất.
+00:00:52,307 --> 00:00:57,476
+Nhóm beacon: bắt tín hiệu ánh sáng/âm thanh
 
 8
-00:00:52,307 --> 00:00:57,476
-Nhóm đèn hiệu: xe tìm và tắt tín hiệu.
+00:00:57,476 --> 00:01:02,476
+và "dập tắt" chúng
 
 9
-00:00:57,476 --> 00:01:02,476
-Chúng "dập tắt" đèn/tín hiệu ngẫu nhiên.
+00:01:02,476 --> 00:01:17,828
+Nhóm thị giác nhận diện hình ảnh thẻ bài
 
 10
-00:01:02,476 --> 00:01:08,000
-Xe thông minh nhận diện hình trên mặt đất.
+00:01:17,828 --> 00:01:14,828
+Phân loại và gắp tự động
 
 11
-00:01:08,000 --> 00:01:14,828
-Phân loại và lấy đồ vật bằng AI.
+00:01:14,828 --> 00:01:20,794
+Nhóm địa hình đạt 70km/h
 
 12
-00:01:14,828 --> 00:01:20,794
-Nhóm địa hình đạt tốc độ 70km/h.
+00:01:20,794 --> 00:01:27,794
+Quay bằng drone
 
 13
-00:01:20,794 --> 00:01:27,794
-(Quay bằng flycam)
+00:01:27,794 --> 00:01:32,467
+Các nhóm thông minh hơn
 
 14
-00:01:27,794 --> 00:01:32,467
-Tiếp theo: các nhóm "thông minh" hơn.
+00:01:32,467 --> 00:01:35,467
+Dùng chip xử lý mạnh
 
 15
-00:01:32,467 --> 00:01:35,467
-Dùng bộ xử lý mạnh hơn.
+00:01:35,467 --> 00:01:38,467
+Mô phỏng tình huống thực tế
 
 16
-00:01:35,467 --> 00:01:38,467
-Mô phỏng tình huống thực tế.
+00:01:38,467 --> 00:01:41,467
+Như logistics, định vị...
 
 17
-00:01:38,467 --> 00:01:41,467
-Như vận chuyển, dẫn đường trong nhà.
+00:01:41,467 --> 00:01:44,467
+Một số có tích hợp AI
 
 18
-00:01:41,467 --> 00:01:44,467
-Một số có tính năng AI.
+00:01:52,173 --> 00:01:56,952
+Robot với nhiều cảm biến
 
 19
-00:01:52,173 --> 00:01:56,952
-Robot này có nhiều cảm biến.
+00:01:56,958 --> 00:02:04,306
+Nhận diện vật cản và lập bản đồ
 
 20
-00:01:56,958 --> 00:02:01,000
-Nó lập bản đồ và tránh vật cản.
+00:02:04,306 --> 00:02:07,306
+Hình ảnh từ giải quốc gia
 
 21
-00:02:01,000 --> 00:02:04,306
-Rồi tính toán lộ trình tối ưu.
+00:02:07,306 --> 00:02:10,306
+ZJUT giành nhiều giải nhất/nhì quốc gia
 
 22
-00:02:04,306 --> 00:02:07,306
-Tiếp theo: điểm nhấn chung kết quốc gia.
+00:02:10,306 --> 00:02:13,306
+Top đầu trong hàng trăm đội
 
 23
-00:02:07,306 --> 00:02:10,306
-ĐH ZJUT giành nhiều giải quốc gia.
-
-24
-00:02:10,306 --> 00:02:13,306
-Top đầu trong hàng trăm đội.
-
-25
 00:02:13,306 --> 00:02:16,306
-Cảm ơn đã theo dõi!
+Cảm ơn đã theo dõi

@@ -1,0 +1,1 @@
+Chiếc xe này chưa được giới thiệu trong video. Ở phía trước có thanh carbon dài với cảm biến điện từ màu vàng. Cảm biến này thu tín hiệu dòng điện từ dây dẫn như antenna, khuếch đại tín hiệu qua mạch op-amp, truyền đến vi điều khiển và dùng thuật toán để xe chạy theo đường định sẵn.

@@ -41,6 +41,8 @@ dependencies:
   chewie: ^1.8.0
   clock: ^1.1.1
   subtitle_wrapper_package: ^2.2.1
+  flutter_settings_screens: ^0.3.4
+  shared_preferences: ^2.5.3
 
 
 

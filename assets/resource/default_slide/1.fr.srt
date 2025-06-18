@@ -1,0 +1,92 @@
+1
+00:00:00,000 --> 00:00:09,729
+Modèles de compétition des années précédentes
+
+2
+00:00:09,729 --> 00:00:15,944
+Groupe 4 roues à caméra
+
+3
+00:00:15,944 --> 00:00:24,944
+Reconnaissance de piste, le plus rapide gagne
+
+4
+00:00:24,944 --> 00:00:39,757
+Groupe 2 roues auto-équilibrant
+
+5
+00:00:39,757 --> 00:00:44,307
+Recharge sans fil (sans batterie)
+
+6
+00:00:44,307 --> 00:00:52,307
+Compétition de vitesse de charge
+
+7
+00:00:52,307 --> 00:00:57,476
+Groupe balise: suit signaux lumière/son
+
+8
+00:00:57,476 --> 00:01:02,476
+et les "éteint"
+
+9
+00:01:02,476 --> 00:01:17,828
+Vision intelligente: reconnaît cartes
+
+10
+00:01:17,828 --> 00:01:14,828
+Tri et saisie automatiques
+
+11
+00:01:14,828 --> 00:01:20,794
+Tout-terrain (70km/h max)
+
+12
+00:01:20,794 --> 00:01:27,794
+Filmé par drone
+
+13
+00:01:27,794 --> 00:01:32,467
+Groupes "intelligents"
+
+14
+00:01:32,467 --> 00:01:35,467
+Processeurs puissants
+
+15
+00:01:35,467 --> 00:01:38,467
+Scénarios réels:
+
+16
+00:01:38,467 --> 00:01:41,467
+Logistique, navigation...
+
+17
+00:01:41,467 --> 00:01:44,467
+Certains avec IA
+
+18
+00:01:52,173 --> 00:01:56,952
+Robot à capteurs multiples
+
+19
+00:01:56,958 --> 00:02:04,306
+Reconnaissance d'obstacles + planification
+
+20
+00:02:04,306 --> 00:02:07,306
+Compétition nationale
+
+21
+00:02:07,306 --> 00:02:10,306
+ZJUT: multiples prix nationaux
+
+22
+00:02:10,306 --> 00:02:13,306
+Top parmi des centaines d'équipes
+
+23
+00:02:13,306 --> 00:02:16,306
+Merci pour votre attention
+

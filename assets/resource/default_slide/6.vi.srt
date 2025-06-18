@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,000
+Đây là mẫu xe ít bánh nhất phòng thí nghiệm
+
+2
+00:00:02,000 --> 00:00:04,000
+Chỉ có 1 bánh duy nhất
+
+3
+00:00:04,000 --> 00:00:06,000
+Giữ thăng bằng bằng bánh đà hai bên
+
+4
+00:00:06,000 --> 00:00:08,000
+Bánh đà tạo quán tính điều chỉnh tư thế
+
+5
+00:00:08,000 --> 00:00:10,000
+Cân bằng cả trên bề mặt hẹp như tủ

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:smart_car_lab/page/home/home_page.dart';
 import 'package:smart_car_lab/route/routes.dart';
 
 
-void main() {
-
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Settings.init(cacheProvider: SharePreferenceCache());
   runApp(const MyApp());
 }
 

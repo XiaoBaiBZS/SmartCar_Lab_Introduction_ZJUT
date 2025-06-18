@@ -1,0 +1,2 @@
+Ce modèle n'était pas dans la vidéo. À l'avant, une longue tige en carbone porte des inducteurs jaunes. Ces capteurs détectent les signaux du courant comme une antenne, amplifient le signal via des circuits OP-AMP, le transmettent au microcontrôleur, et un algorithme fait suivre le trajet prédéfini à toute vitesse.
+
