@@ -37,15 +37,10 @@ class BaseSlideContent extends StatefulWidget {
 }
 
 class _BaseSlideContentState extends State<BaseSlideContent> {
-  // double? mediaWidth;
-  // GlobalKey mediaContentGlobalKey = GlobalKey();
-
   SlideConfig slideConfig = SlideConfig();
   int currentPage = 0;
   Data currentSlideData = Data();
   Data nextSlideData = Data();
-
-
 
   Duration _currentTimerTime = Duration.zero;
   StopwatchController stopwatchController = StopwatchController();
@@ -53,7 +48,7 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
 
 
 
-  late VideoPlayerController _videoSubController;
+  VideoPlayerController? _videoSubController;
 
 
   late SubtitleController _subtitleControllerMain;
@@ -67,39 +62,61 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
   String subtitleContentMain = """
 1
 00:00:00,000 --> 00:00:03,000
-这是第一句字幕，显示3秒钟。
-
+字幕加载错误。请检查字幕文件。
 
 2
 00:00:03,000 --> 00:00:06,000
-第二句字幕在3秒后出现，持续3秒。
+Error srt file.
 
 3
 00:00:06,000 --> 00:00:09,000
-第三句字幕展示一些不同的内容。
+Lỗi tải phụ đề. Vui lòng kiểm tra tệp phụ đề.
 
 4
 00:00:09,000 --> 00:00:12,000
-最后一句字幕，之后会重新开始。
+자막 로딩 오류. 자막 파일을 확인해 주세요.
+
+5
+00:00:12,000 --> 00:00:15,000
+Ошибка загрузки субтитров. Проверьте файл субтитров.
+
+6
+00:00:15,000 --> 00:00:18,000
+字幕読み込みエラー。字幕ファイルを確認してください。
+
+7
+00:00:18,000 --> 00:00:21,000
+Erreur de chargement des sous-titres.
 """;
 
   String subtitleContentSecond = """
 1
 00:00:00,000 --> 00:00:03,000
-这是第一句字幕，显示3秒钟。
-
+Error srt file.
 
 2
 00:00:03,000 --> 00:00:06,000
-第二句字幕在3秒后出现，持续3秒。
+Error srt file.
 
 3
 00:00:06,000 --> 00:00:09,000
-第三句字幕展示一些不同的内容。
+Error srt file.
 
 4
 00:00:09,000 --> 00:00:12,000
-最后一句字幕，之后会重新开始。
+Error srt file.
+
+5
+00:00:12,000 --> 00:00:15,000
+Error srt file.
+
+6
+00:00:15,000 --> 00:00:18,000
+Error srt file.
+
+7
+00:00:18,000 --> 00:00:21,000
+Error srt file.
 """;
 
   Map<String , String> subtitleMap = {
@@ -128,9 +145,6 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
       setState(() {
         firstSrt = subtitleMap[Settings.getValue<String>(Setting.mainSrt,)??"cn"]!;
         secondSrt = subtitleMap[Settings.getValue<String>(Setting.secondSrt,)??"en"]!;
-
-        print(firstSrt);
-        print(secondSrt);
       });
       _updateSlideData();
 
@@ -164,7 +178,7 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
 
     if(currentSlideData.type == "video"){
       if(needDisposeVideoController){
-        _videoSubController.dispose();
+        _videoSubController?.dispose();
         needDisposeVideoController = false;
 
       }
@@ -199,21 +213,14 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
     }
   }
 
-  // void _updateMediaWidth() {
-  //   if (mediaContentGlobalKey.currentContext != null) {
-  //     setState(() {
-  //       mediaWidth = mediaContentGlobalKey.currentContext!.size?.width ?? 0;
-  //     });
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
 
     /// 图片媒体展示
     Widget imageMedia(String assetPath) => SizedBox(
-      width: 800,
-      height: 600,
+      // width: 800,
+      // height: 600,
       child: Image.asset(assetPath),
     );
 
@@ -237,7 +244,11 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
               return imageMedia(currentSlideData.media ?? "");
             } else {
               // 只有需要显示视频时才会评估这个分支
-              return videoMedia(_videoSubController);
+              if(_videoSubController!=null){
+                return videoMedia(_videoSubController!);
+              }else{
+                return Container();
+              }
             }
           },
         ),
@@ -348,14 +359,18 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
 
     /// 向下翻页幻灯片
     void nextPage() {
-      currentPage++;
-      _updateSlideData();
+      if(currentPage+1 < slideConfig.data!.length){
+        currentPage++;
+        _updateSlideData();
+      }
     }
 
     /// 向上翻页幻灯片
     void lastPage() {
-      currentPage--;
-      _updateSlideData();
+      if(currentPage-1 >= 0){
+        currentPage--;
+        _updateSlideData();
+      }
     }
 
     /// 退出放映
@@ -370,17 +385,13 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
         children: [
           const SizedBox(height: 10,),
           TVFocusWidget(
-              onFocus: () => print('获得焦点'),
-              onBlur: () => print('失去焦点'),
               onSelect: () async {
 
                 if(_isTimerRunning){
                   await stopwatchController.pause();
-                  print(_isTimerRunning);
                   setState(() => _isTimerRunning = false);
                 }else{
                   await stopwatchController.start();
-                  print(_isTimerRunning);
                   setState(() => _isTimerRunning = true);
                 }
 
@@ -393,7 +404,7 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
                     child: Row(
                       children: [
                         Icon(Icons.timer_outlined),
-                        SizedBox(width: 3,),
+                        SizedBox(width: 1,),
                         StopwatchWidget(
                           onTimeChanged: (duration) {
                             setState(() {
@@ -422,8 +433,6 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
           nextPageTitle,
           SizedBox(height: 20,),
           TVFocusWidget(
-              onFocus: () => print('获得焦点'),
-              onBlur: () => print('失去焦点'),
               onSelect: (){
                 nextPage();
               },
@@ -441,8 +450,6 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
               )
           ),
           TVFocusWidget(
-              onFocus: () => print('获得焦点'),
-              onBlur: () => print('失去焦点'),
               onSelect: (){
                 lastPage();
               },
@@ -460,8 +467,6 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
               )
           ),
           TVFocusWidget(
-              onFocus: () => print('获得焦点'),
-              onBlur: () => print('失去焦点'),
               onSelect: (){
                 exit();
               },
@@ -484,48 +489,49 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
       ),
     );
 
-
     /// 底部视频字幕
     Widget bottomSrt(){
-      return Container(
-        child: Column(
-          children: [
-            SubtitleWrapper(
-                videoPlayerController: _videoSubController,
-                subtitleController: _subtitleControllerMain,
-                subtitleStyle: const SubtitleStyle(
-                  textColor: Colors.white,
-                  fontSize: 28,
-                  position: SubtitlePosition(bottom: 0,),
+      if(_videoSubController!=null){
+        return Container(
+          child: Column(
+            children: [
+              SubtitleWrapper(
+                  videoPlayerController: _videoSubController!,
+                  subtitleController: _subtitleControllerMain,
+                  subtitleStyle: const SubtitleStyle(
+                    textColor: Colors.white,
+                    fontSize: 28,
+                    position: SubtitlePosition(bottom: 0,),
 
-                ), videoChild:Container(
-              height: 35,
-            ) // 视频播放器部分
+                  ), videoChild:Container(
+                height: 35,
+              ) // 视频播放器部分
 
-            ),
-            SubtitleWrapper(
-                videoPlayerController: _videoSubController,
-                subtitleController: _subtitleControllerSecond,
-                subtitleStyle: const SubtitleStyle(
-                  textColor: Colors.white,
-                  fontSize: 28,
-                  position: SubtitlePosition(bottom: 0,),
-                ), videoChild:Container(
-              height: 35,
-            ) // 视频播放器部分
+              ),
+              SubtitleWrapper(
+                  videoPlayerController: _videoSubController!,
+                  subtitleController: _subtitleControllerSecond,
+                  subtitleStyle: const SubtitleStyle(
+                    textColor: Colors.white,
+                    fontSize: 28,
+                    position: SubtitlePosition(bottom: 0,),
+                  ), videoChild:Container(
+                height: 35,
+              ) // 视频播放器部分
 
-            ),
-          ],
-        ),
-      );
+              ),
+            ],
+          ),
+        );
+      }else{
+        return Container();
+      }
     }
 
     /// 底部图片字幕
     Widget bottomImgSrt(){
-
-      return       Column(
+      return Column(
         children: [
-
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 40,
@@ -539,12 +545,12 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
                 scrollAxis: Axis.horizontal,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 blankSpace: 20.0,
-                velocity: 30,
+                velocity: 40,
                 pauseAfterRound: Duration(milliseconds: 0),
                 showFadingOnlyWhenScrolling: true,
                 fadingEdgeStartFraction: 0.1,
                 fadingEdgeEndFraction: 0.1,
-                startPadding: 10.0,
+                startPadding: 20.0,
                 accelerationDuration: Duration(milliseconds: 100),
                 accelerationCurve: Curves.linear,
                 decelerationDuration: Duration(milliseconds: 100),
@@ -570,12 +576,12 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
                 scrollAxis: Axis.horizontal,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 blankSpace: 20.0,
-                velocity: 30,
+                velocity: 40,
                 pauseAfterRound: Duration(milliseconds: 0),
                 showFadingOnlyWhenScrolling: true,
                 fadingEdgeStartFraction: 0.1,
                 fadingEdgeEndFraction: 0.1,
-                startPadding: 10.0,
+                startPadding: 20.0,
                 accelerationDuration: Duration(milliseconds: 100),
                 accelerationCurve: Curves.linear,
                 decelerationDuration: Duration(milliseconds: 100),
@@ -615,8 +621,11 @@ class _BaseSlideContentState extends State<BaseSlideContent> {
             Expanded(
               child: Row(
                   children: [
-                    mediaContent(),
+                    // mediaContent(),
+                    Expanded(child: mediaContent()),
                     sideTipBar,
+                    // Expanded(child: sideTipBar),
+                    // sideTipBar,
                   ]
               ),
             ),

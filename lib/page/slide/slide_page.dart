@@ -19,18 +19,45 @@ class SlidePage extends StatefulWidget {
 class _SlidePageState extends State<SlidePage> {
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        childAspectRatio: 1.5,
-        mainAxisSpacing: 16.0,
-        crossAxisSpacing: 16.0,
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height/2,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(16.0),),
+              image: const DecorationImage(
+                image: AssetImage("assets/resource/default_slide/banner.png"),
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+
+          ),
+          SizedBox(height: 16.0,),
+          ListTile(
+            title: Text("2025智能车实验室讲解演示",style: TextStyle(fontSize: 24.0),),
+            subtitle: Text("信息楼B205-207",style: TextStyle(fontSize: 20.0)),
+          ),
+
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                childAspectRatio: 1.5,
+                // mainAxisSpacing: 16.0,
+                // crossAxisSpacing: 16.0,
+              ),
+              padding: const EdgeInsets.only(left: 0,top: 16),
+              itemCount: 1,
+              itemBuilder: (context, index) {
+                return SlideHomeCard(title: "默认展示", description: "默认展示文稿");
+              },
+            ),
+          )
+
+
+        ],
       ),
-      padding: const EdgeInsets.all(16.0),
-      itemCount: 1,
-      itemBuilder: (context, index) {
-        return SlideHomeCard(title: "默认展示", description: "默认展示文稿");
-      },
     );
   }
 }

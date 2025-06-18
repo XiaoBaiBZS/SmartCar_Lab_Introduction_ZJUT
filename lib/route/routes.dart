@@ -38,7 +38,7 @@ class Routes {
 
 class RoutePath {
   //HomePage
-  static const String home = "/home";
+  static const String home = "/";
   static const String baseSlideContent = "/slide/slide_content";
 
 }
