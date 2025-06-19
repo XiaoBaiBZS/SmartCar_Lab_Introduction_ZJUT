@@ -87,7 +87,7 @@ class _SettingPageState extends State<SettingPage> {
               '字幕语言选择',
               style: TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+
               ),
             ),
             SizedBox(height: 20.0),

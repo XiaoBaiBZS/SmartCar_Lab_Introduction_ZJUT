@@ -39,20 +39,22 @@ class _SlideHomeCardState extends State<SlideHomeCard> {
       onSelect: (){
         RouteUtils.pushForNamed(context, RoutePath.baseSlideContent);
       },
-      focusColor: widget.isSelected ?  Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.tertiary,
+      focusColor: widget.isSelected ?  Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.primary,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           border: widget.isSelected ? Border.all(color: Theme.of(context).colorScheme.primary, width: 2.0) : null,
         ),
         child: Card(
-          child: Center(
-            child: Text(
-              widget.title,
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: widget.isSelected ? FontWeight.bold : FontWeight.normal,
-                color: widget.isSelected ? Colors.green : Colors.white,
+          child: Container(
+            child: Center(
+              child: Text(
+                widget.title,
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: widget.isSelected ? FontWeight.bold : FontWeight.normal,
+                  color: widget.isSelected ? Colors.green : Colors.white,
+                ),
               ),
             ),
           ),

@@ -45,12 +45,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 // 侧边栏标题
                 Container(
-                  padding: const EdgeInsets.only(left: 16.0,right: 16,top: 32,bottom: 32),
+                  padding: const EdgeInsets.only(left: 14.0,right: 20,top: 32,bottom: 32),
                   alignment: Alignment.centerLeft,
                   child: Row(
                     children: [
                       SizedBox(
-                        width: _sidebarWidth-32,
+                        width: _sidebarWidth-34,
                         child: Image.asset("assets/icon/textlogo.png"),
                       ),
                       // const Text(
