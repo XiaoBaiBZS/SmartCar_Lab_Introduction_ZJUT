@@ -58,6 +58,9 @@ class _SlidePageState extends State<SlidePage> {
                 children: [
                   TVFocusWidget(
                     focusColor: Theme.of(context).colorScheme.primary,
+                    onSelect: () {
+                      RouteUtils.pushForNamed(context, RoutePath.baseSlideContent);
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16.0),
