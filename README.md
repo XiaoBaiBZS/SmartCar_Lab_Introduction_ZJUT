@@ -18,9 +18,9 @@
 - Zhanshuo.Bai@outlook.com
 - 1298589907@qq.com
 
-## 继续开发
+## 继续开发/个性化定制
 
-本项目由flutter框架构建
+请转到仓库维基百科查看
 
 # Smart Car Lab of ZJUT Introduction Television App
 
